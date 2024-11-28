@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="1155.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="camerarentalmanagementsystem.dashboardController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="800.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="45.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="81.0" layoutY="-86.0" prefHeight="35.0" prefWidth="1100.0" styleClass="top-form" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon glyphName="CAMERA" layoutX="14.0" layoutY="28.0" size="1.5em" />
+                              <Label layoutX="61.0" layoutY="9.0" text="Camera Rental Management System">
+                                 <font>
+                                    <Font name="Cambria" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="close" layoutX="1035.0" layoutY="4.0" mnemonicParsing="false" onAction="#close" prefHeight="33.0" prefWidth="61.0" styleClass="close" stylesheets="@dashboardDesign.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="minimize" layoutX="1037.0" layoutY="6.0" mnemonicParsing="false" onAction="#minimize" prefHeight="33.0" prefWidth="55.0" styleClass="minimize" stylesheets="@dashboardDesign.css">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="MINUS" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="nav-form" stylesheets="@dashboardDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-29.0" layoutY="60.0" prefHeight="555.0" prefWidth="200.0" styleClass="shadow" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="59.0" layoutY="125.0" size="7em" />
+                              <Label layoutX="76.0" layoutY="153.0" text="Welcome" textFill="WHITE" />
+                              <Label fx:id="username" alignment="CENTER" layoutX="14.0" layoutY="174.0" onDragDetected="#displayUsername" prefHeight="30.0" prefWidth="179.0" text="User" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="100.0" layoutX="100.0" layoutY="218.0" startX="-100.0" stroke="WHITE" />
+                              <Button fx:id="btnHome" layoutX="17.0" layoutY="243.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Home">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnLogout" layoutX="27.0" layoutY="633.0" mnemonicParsing="false" onAction="#logout" styleClass="logout-btn" stylesheets="@dashboardDesign.css">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Label layoutX="78.0" layoutY="639.0" text="Sign Out" textFill="WHITE" />
+                              <Button fx:id="btnAvailableCameras" layoutX="14.0" layoutY="287.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Available Cameras">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="1.3em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRentCamera" layoutX="14.0" layoutY="329.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Rent Camera">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="CAMERA" size="1.3em" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane fx:id="mainForm" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="homeForm" layoutX="157.0" layoutY="90.0" prefHeight="678.0" prefWidth="954.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="24.0" layoutY="14.0" prefHeight="219.0" prefWidth="906.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="200.0" prefWidth="260.0" styleClass="nav-form" stylesheets="@dashboardDesign.css">
+                                       <children>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="CAMERA" layoutX="14.0" layoutY="121.0" size="4em" />
+                                          <Label layoutX="70.0" layoutY="152.0" text="Available Cameras" textFill="WHITE" />
+                                          <Label fx:id="home_AvailableCameras" alignment="CENTER_RIGHT" layoutX="175.0" layoutY="14.0" onDragDetected="#homeAvailableCameras" text="0" textFill="WHITE" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="323.0" layoutY="10.0" prefHeight="200.0" prefWidth="260.0" styleClass="nav-form" stylesheets="@dashboardDesign.css">
+                                       <children>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="MONEY" layoutX="25.0" layoutY="122.0" size="4em" />
+                                          <Label layoutX="87.0" layoutY="153.0" text="Total Income" textFill="WHITE" />
+                                          <Label fx:id="home_TotalIncome" alignment="CENTER_RIGHT" layoutX="186.0" layoutY="15.0" onDragDetected="#homeTotalIncome" text="RM 0.0" textFill="WHITE" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="628.0" layoutY="10.0" prefHeight="200.0" prefWidth="260.0" styleClass="nav-form" stylesheets="@dashboardDesign.css">
+                                       <children>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="11.0" layoutY="124.0" size="4em" />
+                                          <Label layoutX="76.0" layoutY="153.0" text="Total Customers" textFill="WHITE" />
+                                          <Label fx:id="homeTotalCustomers" alignment="CENTER_RIGHT" layoutX="172.0" layoutY="17.0" onDragDetected="#homeTotalCustomers" text="0" textFill="WHITE" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="24.0" layoutY="250.0" prefHeight="415.0" prefWidth="906.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="23.0" layoutY="14.0" prefHeight="382.0" prefWidth="528.0" stylesheets="@dashboardDesign.css">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <BarChart fx:id="homeIncomeChart" layoutX="18.0" layoutY="24.0" prefHeight="334.0" prefWidth="493.0" title="Income Data Chart">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </BarChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="573.0" layoutY="14.0" prefHeight="382.0" prefWidth="319.0" stylesheets="@dashboardDesign.css">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <LineChart fx:id="homeCustomerData" layoutX="17.0" layoutY="26.0" prefHeight="331.0" prefWidth="285.0" title="Customers Data Chart">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </LineChart>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="availableCamerasForm" layoutX="312.0" layoutY="239.0" prefHeight="678.0" prefWidth="954.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="28.0" layoutY="23.0" prefHeight="230.0" prefWidth="899.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="31.0" layoutY="26.0" text="Camera ID:" />
+                                    <TextField fx:id="availableCameras_CameraID" layoutX="114.0" layoutY="21.0" prefHeight="31.0" prefWidth="138.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Label alignment="CENTER" layoutX="44.0" layoutY="74.0" text="Brand: " textAlignment="CENTER" />
+                                    <TextField fx:id="availableCameras_Brand" layoutX="114.0" layoutY="69.0" prefHeight="31.0" prefWidth="138.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Label alignment="CENTER" layoutX="44.0" layoutY="126.0" text="Model:" textAlignment="CENTER" />
+                                    <TextField fx:id="availableCameras_Model" layoutX="114.0" layoutY="121.0" prefHeight="31.0" prefWidth="138.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <AnchorPane layoutX="548.0" layoutY="26.0" prefHeight="176.0" prefWidth="170.0" stylesheets="@dashboardDesign.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <ImageView fx:id="availableCameras_ImageView" fitHeight="176.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="availableCameras_btnImport" layoutX="4.0" layoutY="137.0" mnemonicParsing="false" onAction="#availableCameraImportImage" prefHeight="35.0" prefWidth="163.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Import" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Label alignment="CENTER" layoutX="44.0" layoutY="177.0" text="Status:" textAlignment="CENTER" />
+                                    <ComboBox fx:id="availableCameras_Status" layoutX="116.0" layoutY="172.0" onAction="#availableCameraStatusList" prefHeight="31.0" prefWidth="136.0" promptText="Choose..." styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Button fx:id="availableCameras_btnInsert" layoutX="764.0" layoutY="32.0" mnemonicParsing="false" onAction="#availableCameraAdd" prefHeight="35.0" prefWidth="100.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Insert" />
+                                    <Button fx:id="availableCameras_btnUpdate" layoutX="764.0" layoutY="77.0" mnemonicParsing="false" onAction="#availableCameraUpdate" prefHeight="35.0" prefWidth="100.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Update" />
+                                    <Button fx:id="availableCameras_btnClear" layoutX="764.0" layoutY="120.0" mnemonicParsing="false" onAction="#availableCameraClear" prefHeight="35.0" prefWidth="100.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="Clear" />
+                                    <Button fx:id="availableCameras_btnDelete" layoutX="764.0" layoutY="161.0" mnemonicParsing="false" onAction="#availableCameraDelete" prefHeight="35.0" prefWidth="100.0" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Delete" />
+                                    <Label layoutX="282.0" layoutY="26.0" text="Price:" />
+                                    <TextField fx:id="availableCameras_Price" layoutX="335.0" layoutY="20.0" prefHeight="31.0" prefWidth="138.0" promptText="RM0.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="28.0" layoutY="269.0" prefHeight="393.0" prefWidth="899.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="availableCameras_TableView" layoutX="21.0" layoutY="53.0" onMouseClicked="#availableCameraSelect" prefHeight="318.0" prefWidth="858.0">
+                                      <columns>
+                                        <TableColumn fx:id="availableCameras_col_CameraID" prefWidth="112.0" text="Camera ID" />
+                                        <TableColumn fx:id="availableCameras_col_Brand" prefWidth="167.0" text="Brand" />
+                                          <TableColumn fx:id="availableCameras_col_Model" prefWidth="230.0" text="Model" />
+                                          <TableColumn fx:id="availableCameras_col_Price" prefWidth="140.0" text="Price" />
+                                          <TableColumn fx:id="availableCameras_col_Status" prefWidth="205.0" text="Status" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="availableCameras_Search" alignment="CENTER" layoutX="21.0" layoutY="14.0" onKeyTyped="#availableCameraSearch" prefHeight="33.0" prefWidth="255.0" promptText="Search" stylesheets="@dashboardDesign.css">
+                                       <styleClass>
+                                          <String fx:value="textfield" />
+                                          <String fx:value="search" />
+                                       </styleClass>
+                                    </TextField>
+                                    <FontAwesomeIcon glyphName="SEARCH" layoutX="29.0" layoutY="38.0" size="1.5em" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="rentForm" layoutX="162.0" layoutY="40.0" prefHeight="678.0" prefWidth="954.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="205.0" prefWidth="925.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="23.0" layoutY="24.0" text="Camera ID:" />
+                                    <ComboBox fx:id="rentCameraID" layoutX="109.0" layoutY="19.0" onAction="#rentCameraCameraId" prefWidth="150.0" promptText="Choose..." styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="23.0" layoutY="69.0" text="Brand:" />
+                                    <ComboBox fx:id="rentBrand" layoutX="109.0" layoutY="64.0" onAction="#rentCameraBrand" prefWidth="150.0" promptText="Choose..." styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="23.0" layoutY="114.0" text="Model:" />
+                                    <ComboBox fx:id="rentModel" layoutX="109.0" layoutY="109.0" onAction="#rentCameraModel" prefWidth="150.0" promptText="Choose..." styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="306.0" layoutY="24.0" text="First Name:" />
+                                    <TextField fx:id="rentFirstName" layoutX="389.0" layoutY="19.0" prefHeight="31.0" prefWidth="150.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Label layoutX="306.0" layoutY="69.0" text="Last Name:" />
+                                    <TextField fx:id="rentLastName" layoutX="389.0" layoutY="64.0" prefHeight="31.0" prefWidth="150.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Label alignment="TOP_CENTER" layoutX="304.0" layoutY="114.0" prefHeight="21.0" prefWidth="70.0" text="Gender:" />
+                                    <ComboBox fx:id="rentGender" layoutX="389.0" layoutY="109.0" onAction="#rentCameraGender" prefWidth="150.0" promptText="Choose..." styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Label alignment="CENTER" layoutX="45.0" layoutY="160.0" prefHeight="21.0" prefWidth="102.0" text="Date Rented:" />
+                                    <DatePicker fx:id="rentDateRent" layoutX="158.0" layoutY="155.0" prefHeight="31.0" prefWidth="127.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Label alignment="CENTER" layoutX="306.0" layoutY="160.0" prefHeight="21.0" prefWidth="102.0" text="Date Returned:" />
+                                    <DatePicker fx:id="rentDateReturn" layoutX="412.0" layoutY="155.0" onAction="#rentDisplayTotal" prefHeight="31.0" prefWidth="127.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Button fx:id="btnRent" layoutX="739.0" layoutY="154.0" mnemonicParsing="false" onAction="#rentPay" prefHeight="35.0" prefWidth="100.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Rent" />
+                                    <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="661.0" layoutY="29.0" prefHeight="26.0" prefWidth="77.0" text="Total:">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="rentTotal" alignment="TOP_CENTER" layoutX="754.0" layoutY="29.0" prefHeight="21.0" prefWidth="70.0" text="RM 0.0">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="675.0" layoutY="72.0" prefHeight="21.0" prefWidth="70.0" text="Amount:">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rentAmount" layoutX="754.0" layoutY="69.0" onAction="#rentAmount" prefHeight="31.0" prefWidth="126.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
+                                    <Label fx:id="rentBalance" alignment="TOP_CENTER" layoutX="754.0" layoutY="122.0" prefHeight="21.0" prefWidth="70.0" text="RM 0.0">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="661.0" layoutY="122.0" prefHeight="26.0" prefWidth="77.0" text="Balance:">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="14.0" layoutY="237.0" prefHeight="429.0" prefWidth="925.0" stylesheets="@dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="rentTableView" layoutX="24.0" layoutY="57.0" prefHeight="358.0" prefWidth="877.0">
+                                      <columns>
+                                        <TableColumn fx:id="rentColCameraID" prefWidth="147.0" text="Camera ID" />
+                                        <TableColumn fx:id="rentColBrand" prefWidth="220.0" text="Brand" />
+                                          <TableColumn fx:id="rentColModel" prefWidth="181.0" text="Model " />
+                                          <TableColumn fx:id="rentColPrice" prefWidth="128.0" text="Price (RM)" />
+                                          <TableColumn fx:id="rentColStatus" prefWidth="199.0" text="Status" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="34.0" layoutY="14.0" text="Available Cameras:">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
